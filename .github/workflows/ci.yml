@@ -49,5 +49,9 @@ jobs:
         with:
           deno-version: v1.x
 
+      - name: Install Playwright Browsers
+        working-directory: ./testbed/kitchen-sink
+        run: pnpm exec playwright install chromium
+
       - name: Run CI tests
         run: pnpm run ci
