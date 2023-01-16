@@ -131,10 +131,13 @@ function testCase(title: string, dev: boolean, host: string, command?: string) {
 								) {
 									clearInterval(interval);
 									resolve();
+								} else {
+									console.warn("Status:", r.status);
+									console.warn("Body:", text);
 								}
 							})
-							.catch(() => {
-								// Ignore error
+							.catch((error) => {
+								console.error(error);
 							});
 					}, 250);
 				});
